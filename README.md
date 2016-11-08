@@ -1,7 +1,8 @@
 djangocms-slider
 ================
 
-#WARNING: NOT SUITABLE FOR OPEN SOURCE USAGE
+#WARNING: NOT SUITABLE FOR REUSE
+Haven't had time to add a couple things that make it reusable.. :)
 
 A simple django cms slideshow plugin. For of https://github.com/urga/djangocms-slider, but using easy-thumbnails by default.
 
