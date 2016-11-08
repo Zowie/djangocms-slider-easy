@@ -23,7 +23,7 @@ class Slide(CMSPlugin):
     A Slide plugin that contains an image and some text.
     """
 
-    image = ImageField(_("image"))
+    image = ImageField()
     url = models.CharField(
         _("link"), max_length=255, blank=True, null=True,
         help_text=_("If present, clicking on image will take user to link."))
