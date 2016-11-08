@@ -4,6 +4,7 @@ from cms.utils.compat.dj import python_2_unicode_compatible
 from django.core.exceptions import ValidationError
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from pyuploadcare.dj.models import ImageField
 
 try:
     from cms.models import get_plugin_media_path
@@ -22,7 +23,7 @@ class Slide(CMSPlugin):
     A Slide plugin that contains an image and some text.
     """
 
-    image = models.ImageField(_("image"), upload_to=get_plugin_media_path)
+    image = ImageField(_("image"))
     url = models.CharField(
         _("link"), max_length=255, blank=True, null=True,
         help_text=_("If present, clicking on image will take user to link."))
