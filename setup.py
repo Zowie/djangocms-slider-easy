@@ -18,7 +18,7 @@ def read(fname):
 INSTALL_REQUIRES = [
     "django>=1.8.0, <1.11",
     "django-cms>=3.0",
-    "easy-thumbnails==2.3",
+    "pyuploadcare==2.2.1",
 ]
 
 CLASSIFIERS = [
@@ -45,9 +45,9 @@ setup(
     author_email="zowie@akoten.com",
     description="A slider plugin for djangocms that lets you arrange slides like any other djangocms plugin. Fork of urga/djangocms-slider, but using uploadcare.",
     license="BSD",
-    keywords=["slideshow", "django", "cms", "plugin"],
-    url="https://github.com/Akoten/djangocms-slider-easy-uploadcare",
-    packages=['djangocms_slider_uploadcare', 'djangocms_slider_uploadcare.migrations'],
+    keywords=["slideshow", "django", "cms", "plugin", "uploadcare", "flexslider", "jquery"],
+    url="https://github.com/Zowie/djangocms-slider-easy-uploadcare",
+    packages=['djangocms_slider_uploadcare'],
     install_requires=INSTALL_REQUIRES,
     classifiers=CLASSIFIERS,
     long_description=read('README.md'),

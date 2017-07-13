@@ -1,4 +1,3 @@
-import os
 from cms.models import CMSPlugin, Page
 from cms.utils.compat.dj import python_2_unicode_compatible
 from django.core.exceptions import ValidationError
@@ -23,7 +22,7 @@ class UploadcareSlide(CMSPlugin):
     A Slide plugin that contains an image and some text.
     """
 
-    image = ImageField(manual_crop="")
+    image = ImageField(manual_crop="", )
     url = models.CharField(
         _("link"), max_length=255, blank=True, null=True,
         help_text=_("If present, clicking on image will take user to link."))
@@ -41,14 +40,8 @@ class UploadcareSlide(CMSPlugin):
     def __str__(self):
         if self.caption:
             return self.caption[:40]
-        elif self.image:
-            # added if, because it raised attribute error when file wasn't
-            # defined.
-            try:
-                return u"%s" % os.path.basename(self.image.name)
-            except AttributeError:
-                pass
-        return u"<empty>"
+        else:
+            return "Uploadcare Image"
 
     def clean(self):
         if self.url and self.page_link:

@@ -1,5 +1,1 @@
-include LICENSE.txt
-include README.md
-recursive-include djangocms_slider/locale *
-recursive-include djangocms_slider/templates *
-recursive-exclude * *.py[co]
+recursive-include djangocms_slider_uploadcare *.html *.png *.gif *js *jpg *jpeg *svg *py *css *po *mo

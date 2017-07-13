@@ -1,0 +1,15 @@
+<li class="slideshow-slide">
+    {% if instance.url or instance.page_link %}
+    <a href="{% if instance.url %}{{ instance.url }}{% else %} {{instance.page_link.get_absolute_url}}{% endif %}">
+        <img src="{{ instance.image }}" alt="{{ instance.alt }}"
+             {% if instance.longdesc %}
+             title="{{ instance.longdesc }}"
+             {% endif %}/>
+    </a>
+    {% else %}
+    <img src="{{ instance.image }}" alt="{{ instance.alt }}"
+         {% if instance.longdesc %}
+         title="{{ instance.longdesc }}"
+         {% endif %}/>
+    {% endif %}
+</li>

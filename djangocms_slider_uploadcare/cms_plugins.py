@@ -10,7 +10,7 @@ class UploadcareSlidePlugin(CMSPluginBase):
     model = UploadcareSlide
     module = _("Slider")
     name = _("Slide")
-    render_template = 'djangocms_slider/slide.html'
+    render_template = 'djangocms_slider_uploadcare/slide.html'
 
 plugin_pool.register_plugin(UploadcareSlidePlugin)
 
@@ -19,7 +19,7 @@ class UploadcareSliderPlugin(CMSPluginBase):
     model = UploadcareSlider
     name = _('Slider')
     module = _("Slideshow")
-    render_template = 'djangocms_slider/slider.html'
+    render_template = 'djangocms_slider_uploadcare/slider.html'
     allow_children = True
     child_classes = ["UploadcareSlidePlugin"]
 
