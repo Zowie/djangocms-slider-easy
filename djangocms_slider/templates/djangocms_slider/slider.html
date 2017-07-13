@@ -3,44 +3,44 @@
     <ul class="slides">
         {% autoescape off %}
         {% with slider_thumb_id=instance.slider_thumb_id simple_settings=instance.use_simple_settings %}
-            {% for plugin in instance.child_plugin_instances %}
-                {% render_plugin plugin %}
-                {% comment %}
-                    <li>
-                        <figure>
-                            {% if image.url %}
-                                {{ image }}
-                                <a href="{{ image.url }}"><img
-                                        src="{{ PUBLIC_URL }}{% thumbnail image.image 1170x500 upscale crop %}"
-                                        alt="{{ image.name }}"/></a>
+        {% for plugin in instance.child_plugin_instances %}
+        {% render_plugin plugin %}
+        {% comment %}
+        <li>
+            <figure>
+                {% if instance.url or instance.page_link %}
+                {{ image }}
+                <a href="{% if instance.url %}{{ instance.url }}{% else %} {{instance.page_link.get_absolute_url}}{% endif %}">
+                    <img src="{{ PUBLIC_URL }}{% thumbnail image.image 1170x500 upscale crop %}"
+                         alt="{{ image.name }}"/></a>
 
-                                <img src="{{ PUBLIC_URL }}{% thumbnail image.image 1170x500 upscale crop %}"
-                                     alt="{{ image.name }}"/>
-                            {% endif %}
-                        </figure>
-                    </li>
-                {% endcomment %}
-            {% endfor %}
+                <img src="{{ PUBLIC_URL }}{% thumbnail image.image 1170x500 upscale crop %}"
+                     alt="{{ image.name }}"/>
+                {% endif %}
+            </figure>
+        </li>
+        {% endcomment %}
+        {% endfor %}
         {% endwith %}
         {% endautoescape %}
     </ul>
 </div>
 
 {% addtoblock "css" %}
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/flexslider.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flexslider/2.6.0/flexslider.min.css"/>
 {% endaddtoblock %}
 
 {% addtoblock "js" %}
-    <script type="text/javascript"
-            src="http://cdnjs.cloudflare.com/ajax/libs/flexslider/2.2.2/jquery.flexslider-min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            $('.slider').flexslider({
-                animation: "slide"
-                , pauseOnAction: false
-                , pauseOnHover: true
-                , controlNav: false
-            });
+<script type="text/javascript"
+        src="http://cdnjs.cloudflare.com/ajax/libs/flexslider/2.2.2/jquery.flexslider-min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.slider').flexslider({
+            animation: "slide"
+            , pauseOnAction: false
+            , pauseOnHover: true
+            , controlNav: false
         });
-    </script>
+    });
+</script>
 {% endaddtoblock %}

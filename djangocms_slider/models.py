@@ -23,7 +23,7 @@ class Slide(CMSPlugin):
     A Slide plugin that contains an image and some text.
     """
 
-    image = ImageField(manual_crop="768x484 minimum")
+    image = ImageField(manual_crop="")
     url = models.CharField(
         _("link"), max_length=255, blank=True, null=True,
         help_text=_("If present, clicking on image will take user to link."))
@@ -61,8 +61,6 @@ class Slider(CMSPlugin):
     """
     Plugin that can contain Slides.
     """
-    slider_thumb_id = models.CharField(max_length=128, null=True, blank=True)
-    use_simple_settings = models.BooleanField(default=True)
 
     def __str__(self):
         return _(u"%s Images") % self.cmsplugin_set.all().count()

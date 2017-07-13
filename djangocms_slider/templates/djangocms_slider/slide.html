@@ -1,6 +1,8 @@
 {% load thumbnail %}
 
 <li class="slideshow-slide">
-    <img src="{{ instance.image }}" width="768" height="480" alt="{{ instance.alt }}"{% if instance.longdesc %}
-         title="{{ instance.longdesc }}"{% endif %} />
+    <img src="{{ instance.image }}" alt="{{ instance.alt }}"
+         {% if instance.longdesc %}
+         title="{{ instance.longdesc }}"
+         {% endif %}/>
 </li>
