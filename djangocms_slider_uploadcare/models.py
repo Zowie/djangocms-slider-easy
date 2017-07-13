@@ -18,7 +18,7 @@ except ImportError:
 
 
 @python_2_unicode_compatible
-class Slide(CMSPlugin):
+class UploadcareSlide(CMSPlugin):
     """
     A Slide plugin that contains an image and some text.
     """
@@ -57,7 +57,7 @@ class Slide(CMSPlugin):
 
 
 @python_2_unicode_compatible
-class Slider(CMSPlugin):
+class UploadcareSlider(CMSPlugin):
     """
     Plugin that can contain Slides.
     """

@@ -3,25 +3,25 @@
 from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from django.utils.translation import ugettext_lazy as _
-from .models import Slider, Slide
+from .models import UploadcareSlide, UploadcareSlider
 
 
-class SlidePlugin(CMSPluginBase):
-    model = Slide
+class UploadcareSlidePlugin(CMSPluginBase):
+    model = UploadcareSlide
     module = _("Slider")
     name = _("Slide")
     render_template = 'djangocms_slider/slide.html'
 
-plugin_pool.register_plugin(SlidePlugin)
+plugin_pool.register_plugin(UploadcareSlidePlugin)
 
 
-class SliderPlugin(CMSPluginBase):
-    model = Slider
+class UploadcareSliderPlugin(CMSPluginBase):
+    model = UploadcareSlider
     name = _('Slider')
     module = _("Slideshow")
     render_template = 'djangocms_slider/slider.html'
     allow_children = True
-    child_classes = ["SlidePlugin"]
+    child_classes = ["UploadcareSlidePlugin"]
 
     def render(self, context, instance, placeholder):
         context.update({
@@ -31,4 +31,4 @@ class SliderPlugin(CMSPluginBase):
         return context
 
 
-plugin_pool.register_plugin(SliderPlugin)
+plugin_pool.register_plugin(UploadcareSliderPlugin)

@@ -1,3 +1,4 @@
+.idea
 *.log
 *.pot
 *.pyc
@@ -5,8 +6,7 @@
 .pydevproject
 .settings
 .*
-djangocms_slideshow.egg-info
-djangocms_slider_easy.egg-info
+djangocms_slider_easy_uploadcare.egg-info
 dist
 build
 env*
