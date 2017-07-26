@@ -41,7 +41,7 @@ class UploadcareSlide(CMSPlugin):
         if self.caption:
             return self.caption[:40]
         else:
-            return "Uploadcare Image"
+            return self.image.info().get('original_filename')
 
     def clean(self):
         if self.url and self.page_link:
