@@ -12,7 +12,10 @@ version = djangocms_slider_uploadcare.__version__
 
 
 def read(fname):
-    return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    try:
+      return open(os.path.join(os.path.dirname(__file__), fname)).read()
+    except:
+      return ''
 
 
 INSTALL_REQUIRES = [
