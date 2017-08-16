@@ -25,7 +25,7 @@ class UploadcareSlide(CMSPlugin):
     image = ImageField(manual_crop="", )
     url = models.CharField(
         _("link"), max_length=255, blank=True, null=True,
-        help_text=_("If present, clicking on image will take user to link."))
+        help_text=_("If present, clicking on image will take user to link. The link must begin with http:// or https://"))
 
     page_link = models.ForeignKey(
         Page, verbose_name=_("page"), null=True,
